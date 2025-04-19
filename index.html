@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src  'self';
+  connect-src 'self' https://api.github.com;
+  style-src   'self' 'unsafe-inline';
+  img-src     'self' https://avatars.githubusercontent.com;
+    ">
+    <title>GitHub Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub Analyzer</h1>
+        </header>
+
+        <div class="data">
+            <h3>Lets check your GitHub</h3>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="">
+                <label for="username">Enter your username</label>
+            </div>
+
+            <button type="button" id="btnCheck">Check</button>
+        </div>
+
+        <div id="result"></div>
+
+        <footer>
+            <a href="">My GitHub</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
