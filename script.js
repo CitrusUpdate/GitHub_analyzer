@@ -1,11 +1,13 @@
-const btnCheck = document.getElementById('btnCheck');
+const githubForm = document.getElementById('github-form');
 const result = document.getElementById('result');
 
-btnCheck.addEventListener('click', getData);
+githubForm.addEventListener('submit', getData)
 
-async function getData() {
+async function getData(event) {
+    event.preventDefault(); // prevents page refresh on form submit!
+
     const username = document.getElementById('username').value.trim();
-    result.innerHTML = '<p>Ładowanie danych...</p>';
+    result.innerHTML = '<p style="margin-top: 16px;">Ładowanie danych...</p>';
 
     if(!username) {
         result.innerHTML = '<p style="color: red">Podaj nazwe użytkownika</p>'
@@ -63,13 +65,13 @@ async function getData() {
         if(daysSinceLast !== null) {
             if(daysSinceLast > 30) {
                 summaryMsg = `
-                    <p style="color: orange"; margin-top: 10px;>
+                    <p style="color: orange; margin-top: 16px; margin-bottom: 16px; text-align: center;"
                         Ostatni projekt był aktualizowany ${daysSinceLast} dni temu - warto może dodać cos nowego?
                     </p>
                 `;
             } else{
                 summaryMsg = `
-                    <p style="color: lightgreen"; margin-top: 10px;>
+                    <p style="color: lightgreen; margin-top: 16px; margin-bottom: 16px; text-align: center;">
                         Super, ostatni projekt był aktualizowany ${daysSinceLast} dni temu!
                     </p>
                 `;

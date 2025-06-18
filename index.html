@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src  'self';
-  connect-src 'self' https://api.github.com;
-  style-src   'self' 'unsafe-inline';
-  img-src     'self' https://avatars.githubusercontent.com;
+        default-src 'self';
+        script-src  'self';
+        connect-src 'self' https://api.github.com;
+        style-src   'self' 'unsafe-inline';
+        img-src     'self' https://avatars.githubusercontent.com;
     ">
     <title>GitHub Analyzer</title>
     <link rel="stylesheet" href="style.css">
@@ -22,13 +22,16 @@
         </header>
 
         <div class="data">
-            <h3>Lets check your GitHub</h3>
-            <div class="input-group">
-                <input type="text" id="username" placeholder="">
-                <label for="username">Enter your username</label>
-            </div>
+            <h3>Let's check your GitHub!</h3>
 
-            <button type="button" id="btnCheck">Check</button>
+            <form id="github-form">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="">
+                    <label for="username">Enter your username</label>
+                </div>
+
+                <button type="submit" id="btnCheck">Check</button>
+            </form>
         </div>
 
         <div id="result"></div>
